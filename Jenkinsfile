@@ -3,7 +3,6 @@ pipeline {
 
   options {
     timestamps()
-    ansiColor('xterm')
     disableConcurrentBuilds()
   }
 
@@ -17,7 +16,7 @@ pipeline {
       steps { checkout scm }
     }
 
-    stage('Check Tools') { // optional sanity check
+    stage('Check Tools') {
       steps {
         bat 'cmd /c node -v'
         bat 'cmd /c npm -v'
@@ -101,4 +100,3 @@ pipeline {
     }
   }
 }
-
